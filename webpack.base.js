@@ -1,10 +1,10 @@
-// common webpack configs(to merge to different webpack configs)
+// webpack.base.js
 const path = require("path");
 
 module.exports = {
   module: {
     rules: [
-      // js - babel
+      // babel js
       {
         test: /.js$/,
         loader: "babel-loader",
@@ -13,7 +13,7 @@ module.exports = {
           presets: ["@babel/preset-env"],
         },
       },
-      // ts - ts-loader
+      // ts-loader ts
       {
         test: /.(ts|tsx)?$/,
         use: "ts-loader",
@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".tsx", ".ts", ".js"],
     alias: {
       "@": path.resolve(process.cwd(), "./src"),
     },
