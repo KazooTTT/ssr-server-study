@@ -1,0 +1,20 @@
+{
+  "name": "ssr-server-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "typescript": "^4.8.4",
+    "eslint": "^8.25.0",
+    "eslint-plugin-react": "^7.31.10"
+  },
+  "dependencies": {}
+}
