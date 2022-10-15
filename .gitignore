@@ -133,3 +133,8 @@ dist
 # editor configs
 .idea
 .vscode
+
+
+# bundle files
+server_build
+client_build
