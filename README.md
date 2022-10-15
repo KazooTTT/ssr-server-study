@@ -15,3 +15,21 @@ theres are two methods
 ## 1.1 ts-node
 
 ## 1.2 webpack bundle and execute
+
+[webpack core concepts](https://webpack.js.org/concepts/)
+
+`pnpm install @babel/preset-env babel-loader ts-loader webpack webpack-merge webpack-cli --save-dev`
+
+how to know what dependencies should be installed?
+> [create app - webpack](https://createapp.dev/webpack)
+
+how to add tsconfig.json  
+`tsc --init`
+
+### nodemon - hot update
+
+![image-20221015234533786](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-15-154534.png)
+
+so we need to specify the watch list:
+
+`npx nodemon --watch src server_build/bundle.js --ext tsx,ts`
