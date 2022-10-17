@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:server": "npx webpack build --config ./webpack.server.js --watch",
-    "start": "npx nodemon --watch src server_build/bundle.js --ext tsx,ts"
+    "build:client": "npx webpack build --config ./webpack.client.js --watch",
+    "start": "npx nodemon --watch src server_build/index.js --ext tsx,ts"
   },
   "keywords": [],
   "author": "",
