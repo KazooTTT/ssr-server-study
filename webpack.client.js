@@ -5,10 +5,10 @@ const baseConfig = require("./webpack.base");
 
 module.exports = merge(baseConfig, {
   mode: "development",
-  entry: "./src/server/index.tsx",
-  target: "node",
+  entry: "./src/client/index.tsx",
+  target: "web", // Compile for usage in a browser-like environment (default)
   output: {
     filename: "index.js",
-    path: path.resolve(process.cwd(), "server_build"),
+    path: path.resolve(process.cwd(), "client_build"),
   },
 });
