@@ -6,7 +6,8 @@
   "scripts": {
     "build:server": "npx webpack build --config ./webpack.server.js --watch",
     "build:client": "npx webpack build --config ./webpack.client.js --watch",
-    "start": "npx nodemon --watch src server_build/index.js --ext tsx,ts"
+    "start": "npx nodemon --watch src server_build/index.js --ext tsx,ts",
+    "start-all": "npm-run-all --parallel build:server build:client start"
   },
   "keywords": [],
   "author": "",
