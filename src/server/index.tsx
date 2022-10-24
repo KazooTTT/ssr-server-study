@@ -2,7 +2,7 @@
  * @Author: KazooTTT wangyijin1999@qq.com
  * @Date: 2022-10-18 00:34:45
  * @LastEditors: KazooTTT wangyijin1999@qq.com
- * @LastEditTime: 2022-10-24 19:46:08
+ * @LastEditTime: 2022-10-24 21:35:58
  * @FilePath: /ssr-server-study/src/server/index.tsx
  * @Description:
  */
@@ -14,12 +14,12 @@ import router from "@/router";
 import { Route, Routes } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
-
 const app = express();
 const bodyParser = require("body-parser");
 
 // 静态资源路径
 const staticPath = path.join(path.resolve(process.cwd(), "client_build"));
+
 app.use(express.static(staticPath));
 
 // 解析body

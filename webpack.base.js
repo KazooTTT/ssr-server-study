@@ -1,5 +1,15 @@
+/*
+ * @Author: KazooTTT wangyijin1999@qq.com
+ * @Date: 2022-10-18 00:31:10
+ * @LastEditors: KazooTTT wangyijin1999@qq.com
+ * @LastEditTime: 2022-10-24 21:51:39
+ * @FilePath: /ssr-server-study/webpack.base.js
+ * @Description:
+ *
+ */
 // webpack.base.js
 const path = require("path");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
   module: {
@@ -27,4 +37,5 @@ module.exports = {
       "@": path.resolve(process.cwd(), "./src"),
     },
   },
+  plugins: [new NodePolyfillPlugin()],
 };

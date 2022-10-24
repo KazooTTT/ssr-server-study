@@ -27,7 +27,7 @@ how to know what dependencies should be installed?
 how to add tsconfig.json  
 `tsc --init`
 
-### nodemon - hot update
+## nodemon - hot update
 
 ![image-20221015234533786](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-15-154534.png)
 
@@ -35,7 +35,7 @@ so we need to specify the watch list:
 
 `npx nodemon --watch src server_build/bundle.js --ext tsx,ts`
 
-### 1.3 client and server --- hydrate
+## client and server --- hydrate
 
 There are 3 steps to render a static page.
 
@@ -45,7 +45,26 @@ There are 3 steps to render a static page.
 
 ![sum up](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-24-110504.jpg)
 
+## how to fetch the data
 
-### 1.4 how to fetch the data 
 We realize the static page render by using ssr before.
 
+## bugs fixed
+
+1. When I use axios, the console.log print these below:
+    ![screenshot](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-24-135950.png)
+    It has told us the reason and how to fix, but it's just one module.
+    We can add all polyfills with `node-polyfill-webpack-plugin`
+
+    [How to Polyfill node core modules in webpack 5]("https://stackoverflow.com/questions/64557638/how-to-polyfill-node-core-modules-in-webpack-5")
+
+    ``` javascript
+    // webpack.config.js (we can add it to base config)
+    const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
+    module.exports = {
+        // Other rules...
+        plugins: [
+            new NodePolyfillPlugin()
+        ]
+    }
+    ```
