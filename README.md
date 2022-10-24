@@ -34,3 +34,18 @@ how to add tsconfig.json
 so we need to specify the watch list:
 
 `npx nodemon --watch src server_build/bundle.js --ext tsx,ts`
+
+### 1.3 client and server --- hydrate
+
+There are 3 steps to render a static page.
+
+1. render template page
+2. match the router
+3. modify the html header
+
+![sum up](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-24-110504.jpg)
+
+
+### 1.4 how to fetch the data 
+We realize the static page render by using ssr before.
+
