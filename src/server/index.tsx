@@ -2,7 +2,7 @@
  * @Author: KazooTTT wangyijin1999@qq.com
  * @Date: 2022-10-18 00:34:45
  * @LastEditors: KazooTTT wangyijin1999@qq.com
- * @LastEditTime: 2022-10-24 19:28:13
+ * @LastEditTime: 2022-10-24 19:46:08
  * @FilePath: /ssr-server-study/src/server/index.tsx
  * @Description:
  */
@@ -19,7 +19,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 // 静态资源路径
-const staticPath = path.join(__dirname, "client_build");
+const staticPath = path.join(path.resolve(process.cwd(), "client_build"));
 app.use(express.static(staticPath));
 
 // 解析body
@@ -48,17 +48,17 @@ app.get("*", (req, res) => {
   const helmet = Helmet.renderStatic();
 
   res.send(`
-      <html
-        <head>
-          ${helmet.title.toString()}
-          ${helmet.meta.toString()}
-        </head>
-        <body>
-          <div id="root">${content}</div>
-          <script src="/index.js"></script>
-        </body>
-      </html>
-    `);
+  <html>
+    <head>
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+    </head>
+    <body>
+      <div id="root">${content}</div>
+      <script src="/index.js"></script>
+    </body>
+  </html>
+`);
 });
 
 app.listen(3000, () => {
