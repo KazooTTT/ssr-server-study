@@ -13,33 +13,15 @@ const Home = () => {
       <div>
         <h1>hello ssr</h1>
         <div>
-          <a href="http://127.0.0.1:3000/demo">链接跳转</a>
+          <a href="http://127.0.0.1:3000/demo">链接跳转(客户端渲染)</a>
         </div>
         <button
           onClick={(): void => {
             navigate("/demo");
           }}
         >
-          路由跳转
+          路由跳转(服务端渲染)
         </button>
-      </div>
-      <div>
-        <h1>hello-ssr</h1>
-        <button
-          onClick={(): void => {
-            alert("hello-ssr");
-          }}
-        >
-          alert
-        </button>
-        <a href="http://127.0.0.1:3000/demo">链接跳转</a>
-        <span
-          onClick={(): void => {
-            navigate("/demo");
-          }}
-        >
-          路由跳转
-        </span>
       </div>
     </>
   );
