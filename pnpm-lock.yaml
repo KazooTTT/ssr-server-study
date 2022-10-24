@@ -14,6 +14,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.40.0
   '@webpack-cli/generators': ^2.5.0
   babel-loader: ^8.2.5
+  body-parser: ^1.20.1
   eslint: ^8.25.0
   eslint-plugin-react: ^7.31.10
   express: ^4.18.2
@@ -32,6 +33,7 @@ specifiers:
   webpack-merge: ^5.8.0
 
 dependencies:
+  body-parser: registry.npmmirror.com/body-parser/1.20.1
   express: registry.npmmirror.com/express/4.18.2
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
