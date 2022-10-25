@@ -1,3 +1,11 @@
+<!--
+ * @Author: KazooTTT wangyijin1999@qq.com
+ * @Date: 2022-10-25 20:56:20
+ * @LastEditors: KazooTTT wangyijin1999@qq.com
+ * @LastEditTime: 2022-10-25 21:12:55
+ * @FilePath: /ssr-server-study/README.md
+ * @Description: 
+-->
 # ssr-server-study
 
 跟着掘金小册【SSR 实战：官网开发指南】实践的代码
@@ -68,3 +76,8 @@ We realize the static page render by using ssr before.
         ]
     }
     ```
+
+2. argument entity must be string, Buffer, or fs.Stats
+   It's a strange bug, I still don't know the real reason.
+    ![shot](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-25-131207.jpg)
+    <https://github.com/ionic-team/ionic-cli/issues/598> ==> it works for me.

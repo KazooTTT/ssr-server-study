@@ -47,22 +47,21 @@ app.get("*", (req, res) => {
 
   const helmet = Helmet.renderStatic();
 
-  res.send(`
-  <html>
-    <head>
-      ${helmet.title.toString()}
-      ${helmet.meta.toString()}
-    </head>
-    <body>
-      <div id="root">${content}</div>
-      <script src="/index.js"></script>
-    </body>
-  </html>
-`);
+  res.send(`   
+   <html>
+        <head>
+          ${helmet.title.toString()}
+          ${helmet.meta.toString()}
+        </head>
+        <body>
+          <div id="root">${content}</div>
+          <script src="/index.js"></script>
+        </body>
+      </html>`);
 });
 
 app.listen(3000, () => {
-  console.log("ssr-server listen on 3000");
+  console.log("start http://127.0.0.1:3000");
 });
 
 childProcess.exec("start http://127.0.0.1:3000");
