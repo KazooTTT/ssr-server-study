@@ -47,7 +47,24 @@ There are 3 steps to render a static page.
 
 ## how to fetch the data
 
-We realize the static page render by using ssr before.
+We realize the static page render by using ssr before. How should we fetch data? There are two ways:
+
+1. on the cilient side, it's common and esay.
+2. on the server side, that is what we learn below.
+
+
+
+fetch data on the server side  ==> global data transfer ==>the client side 
+
+
+
+
+
+
+
+
+
+
 
 ## a bug leads to a more serious bug
 
@@ -81,3 +98,8 @@ We realize the static page render by using ssr before.
 After I did these above, my program cannot run correctly.And finally I find the true reason is that I installed the node polyfill.
 
 It got me think about the joke —— don't modify the codes when the program can run successfully.
+
+
+
+
+
