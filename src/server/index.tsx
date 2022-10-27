@@ -2,7 +2,7 @@
  * @Author: KazooTTT wangyijin1999@qq.com
  * @Date: 2022-10-18 00:34:45
  * @LastEditors: KazooTTT wangyijin1999@qq.com
- * @LastEditTime: 2022-10-24 21:35:58
+ * @LastEditTime: 2022-10-27 20:03:04
  * @FilePath: /ssr-server-study/src/server/index.tsx
  * @Description:
  */
@@ -14,15 +14,18 @@ import router from "@/router";
 import { Route, Routes } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
+import { Provider } from "react-redux";
+import { serverStore } from "@/store";
+
 const app = express();
+
 const bodyParser = require("body-parser");
 
 // 静态资源路径
 const staticPath = path.join(path.resolve(process.cwd(), "client_build"));
-
 app.use(express.static(staticPath));
 
-// 解析body
+// 请求body解析
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -36,28 +39,31 @@ app.post("/api/getDemoData", (req, res) => {
 
 app.get("*", (req, res) => {
   const content = renderToString(
-    <StaticRouter location={req.path}>
-      <Routes>
-        {router?.map((item, index) => {
-          return <Route {...item} key={index} />;
-        })}
-      </Routes>
-    </StaticRouter>
+    <Provider store={serverStore}>
+      <StaticRouter location={req.path}>
+        <Routes>
+          {router?.map((item, index) => {
+            return <Route {...item} key={index} />;
+          })}
+        </Routes>
+      </StaticRouter>
+    </Provider>
   );
 
   const helmet = Helmet.renderStatic();
 
-  res.send(`   
-   <html>
-        <head>
-          ${helmet.title.toString()}
-          ${helmet.meta.toString()}
-        </head>
-        <body>
-          <div id="root">${content}</div>
-          <script src="/index.js"></script>
-        </body>
-      </html>`);
+  res.send(`
+    <html
+      <head>
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+      </head>
+      <body>
+        <div id="root">${content}</div>
+        <script src="/index.js"></script>
+      </body>
+    </html>
+  `);
 });
 
 app.listen(3000, () => {
