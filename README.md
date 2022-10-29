@@ -4,6 +4,10 @@
 
 （小册地址：<https://juejin.cn/book/7137945369635192836>）
 
+内容：1-5章，SSR原理部分
+
+![outline](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-29-064651.png)
+
 与此同时，感觉到在写代码的时候中英文切换有些打断节奏，所以想尝试文本、注释以及学习笔记也使用英文来写。
 
 ## 1. how to execute ts files on node

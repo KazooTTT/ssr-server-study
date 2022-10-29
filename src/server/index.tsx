@@ -1,11 +1,12 @@
 /*
  * @Author: KazooTTT wangyijin1999@qq.com
- * @Date: 2022-10-18 00:34:45
+ * @Date: 2022-10-26 16:58:24
  * @LastEditors: KazooTTT wangyijin1999@qq.com
- * @LastEditTime: 2022-10-27 20:03:04
+ * @LastEditTime: 2022-10-28 21:14:38
  * @FilePath: /ssr-server-study/src/server/index.tsx
  * @Description:
  */
+// ./src/server/index.tsx
 import express from "express";
 import childProcess from "child_process";
 import { renderToString } from "react-dom/server";
@@ -14,16 +15,14 @@ import router from "@/router";
 import { Route, Routes } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { Helmet } from "react-helmet";
-import { Provider } from "react-redux";
 import { serverStore } from "@/store";
+import { Provider } from "react-redux";
 
 const app = express();
 
 const bodyParser = require("body-parser");
 
-// 静态资源路径
-const staticPath = path.join(path.resolve(process.cwd(), "client_build"));
-app.use(express.static(staticPath));
+app.use(express.static(path.resolve(process.cwd(), "client_build")));
 
 // 请求body解析
 app.use(bodyParser.json());
@@ -67,7 +66,7 @@ app.get("*", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("start http://127.0.0.1:3000");
+  console.log("ssr-server listen on 3000");
 });
 
 childProcess.exec("start http://127.0.0.1:3000");
