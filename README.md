@@ -45,27 +45,6 @@ There are 3 steps to render a static page.
 
 ![sum up](https://kazoottt-1256684243.cos.ap-chengdu.myqcloud.com/2022-10-24-110504.jpg)
 
-## how to fetch the data
-
-We realize the static page render by using ssr before. How should we fetch data? There are two ways:
-
-1. on the cilient side, it's common and esay.
-2. on the server side, that is what we learn below.
-
-
-
-fetch data on the server side  ==> global data transfer ==>the client side 
-
-
-
-
-
-
-
-
-
-
-
 ## a bug leads to a more serious bug
 
 1. ~~When I use axios, the console.log print these below:~~
@@ -99,7 +78,13 @@ After I did these above, my program cannot run correctly.And finally I find the 
 
 It got me think about the joke —— don't modify the codes when the program can run successfully.
 
+## how to fetch the data
 
+We realize the static page render by using ssr before. How should we fetch data? There are two ways:
 
+1. on the cilient side, it's common and esay.
+2. on the server side, that is what we learn below.
 
+fetch data on the server side  ==> global data transfer ==>the client side
 
+It's diffcult for me to understand the chapter 6, I'll look back to this later.
